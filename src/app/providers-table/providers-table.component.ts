@@ -6,7 +6,7 @@ import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
+import { MatCardModule } from '@angular/material/card';
 @Component({
   selector: 'providers-table',
   standalone: true,
@@ -16,6 +16,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    MatCardModule,
   ],
   templateUrl: './providers-table.component.html',
   styleUrl: './providers-table.component.css',
@@ -48,11 +49,15 @@ export class ProvidersTableComponent implements OnInit {
     // this.displayedColumns = Object.keys(providers[0]);
     this.displayedColumns = [
       'name',
+      'province',
+      'date',
+      'profession',
       'regulatory_body',
       'discipline_type',
-      'date',
-      'province',
       'location',
+      'benefit',
+      'note',
+      'note2',
     ];
   }
 

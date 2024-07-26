@@ -1,10 +1,10 @@
-/* table {
-  width: 100%;
-} */
+.card-content {
+  margin-bottom: 1rem;
+}
 
 .mat-mdc-form-field {
   font-size: 14px;
-  width: 100%;
+  width: 30%;
 }
 
 td,
