@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ButtonModule } from 'primeng/button';
+
+import { ProvidersTableComponent } from './providers-table/providers-table.component';
 import { AdvancedFiltersComponent } from './advanced-filters/advanced-filters.component';
 import { DataTableComponent } from './data-table/data-table.component';
 @Component({
@@ -8,7 +9,7 @@ import { DataTableComponent } from './data-table/data-table.component';
   standalone: true,
   imports: [
     RouterOutlet,
-    ButtonModule,
+    ProvidersTableComponent,
     AdvancedFiltersComponent,
     DataTableComponent,
   ],
@@ -16,5 +17,5 @@ import { DataTableComponent } from './data-table/data-table.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'frontend_pvt';
+  title = 'Provider Validation Tool';
 }
