@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ProvidersService, Provider } from '../providers.service';
+import { Provider, ProvidersService } from '../providers.service';
 
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatCardModule } from '@angular/material/card';
 @Component({
   selector: 'providers-table',
   standalone: true,
@@ -35,18 +35,7 @@ export class ProvidersTableComponent implements OnInit {
     this.dataSource = new MatTableDataSource(providers);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-    //     <!-- benefit: string;
-    // profession: string;
-    // province: string;
-    // regulatory_body: string;
-    // discipline_type: string;
-    // name: string;
-    // date: string;
-    // location: string;
-    // note: string;
-    // note2: string;
-    // reference: string; -->
-    // this.displayedColumns = Object.keys(providers[0]);
+
     this.displayedColumns = [
       'name',
       'province',
@@ -57,7 +46,6 @@ export class ProvidersTableComponent implements OnInit {
       'location',
       'benefit',
       'note',
-      'note2',
     ];
   }
 
@@ -67,6 +55,12 @@ export class ProvidersTableComponent implements OnInit {
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
+    }
+  }
+
+  onRowClicked(row: Provider) {
+    if (row.reference) {
+      window.open(row.reference, '_blank');
     }
   }
 }

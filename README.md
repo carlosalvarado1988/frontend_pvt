@@ -26,8 +26,37 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 
-#### Dev notes
+## Dev notes
+
+#### Template driven forms
+
+- Using template driven form for reasons:
+  - Good for simple forms
+  - Simple validation
+  - Easier to create
+  - Less code
+
+###### Data
+
+Data model from scrape
+
+```
+    benefit: string;
+    profession: string;
+    province: string;
+    regulatory_body: string;
+    discipline_type: string;
+    name: string;
+    date: string;
+    location: string;
+    note: string;
+    note2: string;
+    reference: string;
+```
 
 ###### TODO:
 
+Ideas to implement:
+
 - Add custom theme, darkmode and bootstrap if possible
+- adding modal card with more details before external link
