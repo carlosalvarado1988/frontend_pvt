@@ -1,0 +1,36 @@
+{
+  "professions": [
+    { "label": "Pharmacy", "value": "pharmacy" },
+    { "label": "Doctor", "value": "doctor" }
+  ],
+  "benefits": [
+    { "label": "Pharmacy", "value": "pharmacy" },
+    { "label": "Health Insurrance", "value": "health_insurrance" }
+  ],
+  "provinces": [
+    { "label": "AB", "value": "AB" },
+    { "label": "MB", "value": "MB" },
+    { "label": "NL", "value": "NL" },
+    { "label": "NS", "value": "NS" },
+    { "label": "ON", "value": "AB" },
+    { "label": "QC", "value": "QC" },
+    { "label": "SK", "value": "SK" }
+  ],
+  "regulatoryBodies": [
+    { "label": "Alberta College of Pharmacy", "value": "1" },
+    { "label": "CanLii", "value": "2" },
+    { "label": "College of Pharmacists of Manitoba", "value": "3" },
+    { "label": "Nova Scotia College of Pharmacists", "value": "4" },
+    { "label": "Ontario College of Pharmacists", "value": "5" },
+    { "label": "Ordre Des Pharmaciens Du Quebec", "value": "6" }
+  ],
+  "disciplineTypes": [
+    { "label": "Avis de limitation", "value": "avis_de_limitation" },
+    {
+      "label": "avis de limitation volontaire",
+      "value": "avis_de_limitation_volontaire"
+    },
+    { "label": "Avis de radiation", "value": "avis_de_-radiation" },
+    { "label": "Avis de suspension", "value": "avis_desuspension" }
+  ]
+}

@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ProvidersService } from '../providers.service';
+
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -26,20 +28,26 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './search-form.component.html',
   styleUrl: './search-form.component.scss',
 })
-export class SearchFormComponent {
-  professions = ['Engineer', 'Doctor', 'Artist', 'Teacher'];
-  benefits = ['Health Insurance', 'Pension Plan', 'Vacation'];
-  provinces = ['Ontario', 'Quebec', 'British Columbia', 'Alberta'];
-  disciplineTypes = ['Technical', 'Creative', 'Scientific', 'Administrative'];
-  regulatoryBodies = ['Technical', 'Creative', 'Scientific', 'Administrative'];
+export class SearchFormComponent implements OnInit {
+  categories: any = {};
 
-  onSubmit(form: any) {
+  constructor(private service: ProvidersService) {}
+
+  async ngOnInit() {
+    this.categories = await this.service.getCategories();
+  }
+
+  onSubmit(form: NgForm): void {
     console.log('Form Data:', form.value);
   }
 
-  isFormValid(form: any): boolean {
+  isFormValid(form: NgForm): boolean | null {
     return (
       form.dirty && Object.keys(form.value).some((key) => !!form.value[key])
     );
+  }
+
+  clearAll(form: NgForm): void {
+    form.resetForm();
   }
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import Data from './mock-data/sample_data.json';
+import Categories from './mock-data/sample_categories.json';
 
 export interface Provider {
   benefit: string;
@@ -21,5 +22,9 @@ export interface Provider {
 export class ProvidersService {
   getProviders(): Promise<Provider[]> {
     return Promise.resolve(Data);
+  }
+
+  getCategories(): Promise<{}> {
+    return Promise.resolve(Categories);
   }
 }

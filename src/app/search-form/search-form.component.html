@@ -1,4 +1,4 @@
-<mat-accordion>
+<mat-accordion class="search-panel">
   <mat-expansion-panel class="expansion-panel">
     <mat-expansion-panel-header>
       <mat-panel-title>Search</mat-panel-title>
@@ -11,50 +11,57 @@
       (ngSubmit)="onSubmit(form)"
     >
       <mat-form-field appearance="outline">
-        <mat-label>Name</mat-label>
+        <mat-label>Provider Name or Organization</mat-label>
         <input matInput name="name" ngModel />
       </mat-form-field>
 
       <div class="two-columns-grid">
         <mat-form-field appearance="outline">
           <mat-label>Profession</mat-label>
-          <mat-select multiple ngModel name="profession" id="profession">
+          <mat-select
+            multiple
+            ngModel
+            name="categories.professions"
+            id="profession"
+          >
             <mat-option
-              *ngFor="let profession of professions"
-              [value]="profession"
+              *ngFor="let profession of categories.professions"
+              [value]="profession.value"
             >
-              {{ profession }}
+              {{ profession.label }}
             </mat-option>
           </mat-select>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>Benefits</mat-label>
-          <mat-select name="benefits" ngModel multiple>
-            <mat-option *ngFor="let benefit of benefits" [value]="benefit">{{
-              benefit
-            }}</mat-option>
+          <mat-select name="categories.benefits" ngModel multiple>
+            <mat-option
+              *ngFor="let benefit of categories.benefits"
+              [value]="categories.benefits.value"
+              >{{ benefit.label }}</mat-option
+            >
           </mat-select>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>Discipline Type</mat-label>
-          <mat-select name="disciplineType" ngModel multiple>
+          <mat-select name="categories.disciplineType" ngModel multiple>
             <mat-option
-              *ngFor="let disciplineType of disciplineTypes"
-              [value]="disciplineType"
-              >{{ disciplineType }}</mat-option
+              *ngFor="let disciplineType of categories.disciplineTypes"
+              [value]="disciplineType.value"
+              >{{ disciplineType.label }}</mat-option
             >
           </mat-select>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>Regulatory Body</mat-label>
-          <mat-select name="regulatoryBody" ngModel multiple>
+          <mat-select name="categories.regulatoryBody" ngModel multiple>
             <mat-option
-              *ngFor="let regulatoryBody of regulatoryBodies"
-              [value]="regulatoryBody"
-              >{{ regulatoryBody }}</mat-option
+              *ngFor="let regulatoryBody of categories.regulatoryBodies"
+              [value]="regulatoryBody.value"
+              >{{ regulatoryBody.label }}</mat-option
             >
           </mat-select>
         </mat-form-field>
@@ -73,10 +80,12 @@
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>Province</mat-label>
-          <mat-select name="province" ngModel multiple>
-            <mat-option *ngFor="let province of provinces" [value]="province">{{
-              province
-            }}</mat-option>
+          <mat-select name="categories.province" ngModel multiple>
+            <mat-option
+              *ngFor="let province of categories.provinces"
+              [value]="province.value"
+              >{{ province.label }}</mat-option
+            >
           </mat-select>
         </mat-form-field>
       </div>
@@ -85,9 +94,11 @@
         <button
           mat-stroked-button
           color="secondary"
+          type="button"
           [disabled]="!isFormValid(form)"
+          (click)="clearAll(form)"
         >
-          Clear
+          Clear all
         </button>
 
         <button
