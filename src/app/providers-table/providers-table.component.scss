@@ -1,84 +1,59 @@
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+
+  .search-accordion {
+    flex: 1;
+    max-width: 600px;
+  }
+
+  .filter-field {
+    flex: 1;
+    margin-left: auto;
+    max-width: 400px; /* Adjust as needed */
+  }
+}
+
 .card-content {
   margin-bottom: 1rem;
 }
 
-.mat-mdc-form-field {
-  width: 30%;
-}
-
 table {
   width: 100%;
-}
 
-tr.mat-mdc-row:hover {
-  cursor: pointer;
-  background: #b4b4b433;
-}
+  tr.mat-mdc-row:hover {
+    cursor: pointer;
+    background: #b4b4b433;
+  }
 
-.mat-sort-header-container > .mat-sort-header-content {
-  text-align: left !important;
-}
+  .mat-column-name,
+  .mat-column-date,
+  .mat-column-profession,
+  .mat-column-benefit,
+  .mat-column-regulatory_bod,
+  .mat-column-discipline_type,
+  .mat-column-province,
+  .mat-column-location,
+  .mat-column-note,
+  .mat-column-note2 {
+    width: 10%;
+    word-wrap: break-word;
+    white-space: unset;
+    flex: 0 0 10%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
 
-.mat-column-name {
-  word-wrap: break-word;
-  width: 20%;
-  overflow-wrap: break-word;
-  word-break: break-word;
-
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-}
-
-.mat-column-date {
-  word-wrap: break-word;
-  white-space: unset;
-  width: 8%;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-
-  word-break: break-word;
-
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-}
-
-.mat-column-profession,
-.mat-column-benefit,
-.mat-column-regulatory_bod,
-.mat-column-discipline_type {
-  word-wrap: break-word;
-  white-space: unset;
-  width: 10%;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-
-  word-break: break-word;
-
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-}
-
-.mat-column-province,
-.mat-column-location,
-.mat-column-note,
-.mat-column-note2 {
-  word-wrap: break-word;
-  white-space: unset;
-  flex: 0 0 10%;
-  width: 10%;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-
-  word-break: break-word;
-
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
+  .mat-column-name {
+    width: 15%;
+  }
+  .mat-column-date {
+    width: 8%;
+  }
 }
