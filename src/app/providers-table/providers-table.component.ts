@@ -7,10 +7,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { SearchFormComponent } from '../search-form/search-form.component';
+
+import { MatExpansionModule } from '@angular/material/expansion';
+
 @Component({
   selector: 'providers-table',
   standalone: true,
   imports: [
+    MatExpansionModule,
+    SearchFormComponent,
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
