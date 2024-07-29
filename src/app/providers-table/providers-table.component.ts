@@ -19,7 +19,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
     MatCardModule,
   ],
   templateUrl: './providers-table.component.html',
-  styleUrl: './providers-table.component.css',
+  styleUrl: './providers-table.component.scss',
 })
 export class ProvidersTableComponent implements OnInit {
   dataSource: MatTableDataSource<Provider> = new MatTableDataSource();

@@ -1,0 +1,31 @@
+.expansion-panel,
+.mat-accordion > .mat-expansion-panel-spacing:last-child {
+  width: 50%;
+  margin-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+mat-expansion-panel-header {
+  height: 64px !important;
+}
+mat-form-field {
+  width: 100%;
+}
+
+.search-form-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.two-columns-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns of equal width */
+  gap: 10px; /* Gap between grid items */
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: end;
+}

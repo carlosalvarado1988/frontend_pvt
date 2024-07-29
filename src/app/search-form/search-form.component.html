@@ -1,0 +1,104 @@
+<mat-accordion>
+  <mat-expansion-panel class="expansion-panel">
+    <mat-expansion-panel-header>
+      <mat-panel-title>Baseline Search</mat-panel-title>
+      <mat-panel-description></mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <form
+      class="search-form-container"
+      #form="ngForm"
+      (ngSubmit)="onSubmit(form)"
+    >
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput name="name" ngModel />
+      </mat-form-field>
+
+      <div class="two-columns-grid">
+        <mat-form-field appearance="outline">
+          <mat-label>Profession</mat-label>
+          <mat-select multiple ngModel name="profession" id="profession">
+            <mat-option
+              *ngFor="let profession of professions"
+              [value]="profession"
+            >
+              {{ profession }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Benefits</mat-label>
+          <mat-select name="benefits" ngModel multiple>
+            <mat-option *ngFor="let benefit of benefits" [value]="benefit">{{
+              benefit
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Discipline Type</mat-label>
+          <mat-select name="disciplineType" ngModel multiple>
+            <mat-option
+              *ngFor="let disciplineType of disciplineTypes"
+              [value]="disciplineType"
+              >{{ disciplineType }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Regulatory Body</mat-label>
+          <mat-select name="regulatoryBody" ngModel multiple>
+            <mat-option
+              *ngFor="let regulatoryBody of regulatoryBodies"
+              [value]="regulatoryBody"
+              >{{ regulatoryBody }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Date Range</mat-label>
+          <mat-date-range-input [rangePicker]="picker" name="dateRange" ngModel>
+            <input matStartDate placeholder="Start date" />
+            <input matEndDate placeholder="End date" />
+          </mat-date-range-input>
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Province</mat-label>
+          <mat-select name="province" ngModel multiple>
+            <mat-option *ngFor="let province of provinces" [value]="province">{{
+              province
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="action-buttons">
+        <button
+          mat-stroked-button
+          color="secondary"
+          [disabled]="!isFormValid(form)"
+        >
+          Clear
+        </button>
+
+        <button
+          mat-flat-button
+          color="primary"
+          type="submit"
+          [disabled]="!isFormValid(form)"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </mat-expansion-panel>
+</mat-accordion>
