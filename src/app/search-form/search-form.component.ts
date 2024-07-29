@@ -30,6 +30,8 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class SearchFormComponent implements OnInit {
   categories: any = {};
+  startDate?: string;
+  endDate?: string;
 
   constructor(private service: ProvidersService) {}
 

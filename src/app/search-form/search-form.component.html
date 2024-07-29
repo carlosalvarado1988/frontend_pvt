@@ -68,16 +68,27 @@
 
         <mat-form-field appearance="outline">
           <mat-label>Date Range</mat-label>
-          <mat-date-range-input [rangePicker]="picker" name="dateRange" ngModel>
-            <input matStartDate placeholder="Start date" />
-            <input matEndDate placeholder="End date" />
+          <mat-date-range-input [rangePicker]="picker">
+            <input
+              matStartDate
+              name="startDate"
+              [ngModel]="startDate"
+              placeholder="Start date"
+            />
+            <input
+              matEndDate
+              name="endDate"
+              [ngModel]="endDate"
+              placeholder="End date"
+            />
           </mat-date-range-input>
           <mat-datepicker-toggle
-            matSuffix
+            matPrefix
             [for]="picker"
           ></mat-datepicker-toggle>
           <mat-date-range-picker #picker></mat-date-range-picker>
         </mat-form-field>
+
         <mat-form-field appearance="outline">
           <mat-label>Province</mat-label>
           <mat-select name="categories.province" ngModel multiple>
