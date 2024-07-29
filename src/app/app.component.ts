@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { SearchFormComponent } from './search-form/search-form.component';
-import { ProvidersTableComponent } from './providers-table/providers-table.component';
+import { ProvidersSearchTableComponent } from './providers-search-table/providers-search-table.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SearchFormComponent, ProvidersTableComponent],
+  imports: [RouterOutlet, SearchFormComponent, ProvidersSearchTableComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

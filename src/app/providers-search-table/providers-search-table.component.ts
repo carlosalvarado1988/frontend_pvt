@@ -9,13 +9,10 @@ import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { SearchFormComponent } from '../search-form/search-form.component';
 
-import { MatExpansionModule } from '@angular/material/expansion';
-
 @Component({
-  selector: 'providers-table',
+  selector: 'providers-search-table',
   standalone: true,
   imports: [
-    MatExpansionModule,
     SearchFormComponent,
     MatFormFieldModule,
     MatInputModule,
@@ -24,10 +21,10 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatPaginatorModule,
     MatCardModule,
   ],
-  templateUrl: './providers-table.component.html',
-  styleUrl: './providers-table.component.scss',
+  templateUrl: './providers-search-table.component.html',
+  styleUrl: './providers-search-table.component.scss',
 })
-export class ProvidersTableComponent implements OnInit {
+export class ProvidersSearchTableComponent implements OnInit {
   dataSource: MatTableDataSource<Provider> = new MatTableDataSource();
   public displayedColumns: string[] = [];
 

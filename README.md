@@ -31,10 +31,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 #### Template driven forms
 
 - Using template driven form for reasons:
+
   - Good for simple forms
   - Simple validation
   - Easier to create
   - Less code
+
+- FormsModule is the form builder used to bind data
 
 ###### Data
 
