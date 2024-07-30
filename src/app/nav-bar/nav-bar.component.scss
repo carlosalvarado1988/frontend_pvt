@@ -1,0 +1,11 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+mat-toolbar {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
